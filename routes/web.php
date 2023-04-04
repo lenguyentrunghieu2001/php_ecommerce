@@ -19,9 +19,15 @@ define('route_account', BASE_URL .  'admin/account/');
 
 // category post 
 define('route_category_post', BASE_URL .  'admin/categoryPost/');
+
+// post
+define('route_post', BASE_URL .  'admin/post');
+
 //---------------------end admin--------------
 
 
 // --------------------user-------------------
+define('route_category_user', BASE_URL . 'category');
 
+define('route_product_user', BASE_URL . 'product');
 //---------------------end user--------------

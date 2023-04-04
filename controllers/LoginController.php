@@ -68,6 +68,6 @@ class LoginController extends Controller
     {
         session::init();
         session::destroy();
-        header('location:' . route_login);
+        header('location:' . BASE_URL);
     }
 }

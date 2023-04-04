@@ -12,6 +12,7 @@ class CategoryModel extends Model
         return $this->db->select($table);
     }
 
+
     public function categoryById($table, $id)
     {
         return $this->db->findOne($table, $id);

@@ -13,6 +13,13 @@ class ProductModel extends Model
     }
 
 
+    public function findProduct($table, $id)
+    {
+        $sql = "SELECT * FROM $table WHERE category_id = $id";
+        return $this->db->selectRaw($sql);
+    }
+
+
     public function productById($table, $id)
     {
         return $this->db->findOne($table, $id);
