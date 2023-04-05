@@ -18,6 +18,12 @@ class PostModel extends Model
         return $this->db->selectRaw($sql);
     }
 
+    public function findLimitPostNew($table, $limit)
+    {
+        $sql = "SELECT * FROM $table ORDER BY id DESC LIMIT $limit ";
+        return $this->db->selectRaw($sql);
+    }
+
     public function postById($table, $id)
     {
         return $this->db->findOne($table, $id);

@@ -15,7 +15,7 @@
                     <div class="cart_wrapper">
                         <div>
                             <?php
-                            if (session::get('username')) {
+                            if (session::get('login')) {
                             ?>
                                 <span><?= session::get('username') ?></span>
 
@@ -71,7 +71,7 @@
 
 
                                 <li class=''><a href='<?= route_post_user ?>'>Tin tức</a></li>
-                                <li class=''><a href='<?= route_cart_user ?>'>Giỏ hàng</a></li>
+                                <li class=''><a href='<?= route_cart ?>'>Giỏ hàng</a></li>
                                 <li class=''><a href='chitiettin.php'>Đơn hàng</a></li>
                                 <?php
                                 if (session::get('role_id') == 1) {

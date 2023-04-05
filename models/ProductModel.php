@@ -19,6 +19,22 @@ class ProductModel extends Model
         return $this->db->selectRaw($sql);
     }
 
+    public function findLimitProduct($table, $id, $limit, $id_product)
+    {
+        $sql = "SELECT * FROM $table WHERE category_id = $id  AND id NOT IN('$id_product') LIMIT $limit";
+        return $this->db->selectRaw($sql);
+    }
+
+    public function findLimitHot($table, $limit)
+    {
+        $sql = "SELECT * FROM $table WHERE hot = 1  ORDER BY id DESC LIMIT $limit ";
+        return $this->db->selectRaw($sql);
+    }
+    public function findLimitNew($table, $limit)
+    {
+        $sql = "SELECT * FROM $table ORDER BY id DESC LIMIT $limit ";
+        return $this->db->selectRaw($sql);
+    }
 
     public function productById($table, $id)
     {

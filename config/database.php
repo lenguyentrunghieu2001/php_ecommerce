@@ -47,6 +47,13 @@ class Database extends PDO
         return $statement->fetchAll();
     }
 
+    public function findAccount($sql)
+    {
+        $statement = $this->prepare($sql);
+        $statement->execute();
+        return $statement->fetch();
+    }
+
 
     public function insert($table, $data)
     {

@@ -156,4 +156,17 @@ class ProductController extends Controller
         $this->productmodel->deleteProduct($this->table, 'id', $id);
         header('location:' . route_product);
     }
+
+    public function hot($id)
+    {
+        $product_id = $this->productmodel->productById($this->table, $id);
+
+        if ($product_id['hot'] == 0) {
+            $this->productmodel->updateProduct($this->table, ['hot' => 1], 'id', $id);
+            header('location:' . route_product);
+        } else {
+            $this->productmodel->updateProduct($this->table, ['hot' => 0], 'id', $id);
+            header('location:' . route_product);
+        }
+    }
 }

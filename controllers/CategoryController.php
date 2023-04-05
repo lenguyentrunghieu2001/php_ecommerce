@@ -11,7 +11,6 @@ class CategoryController extends Controller
 
     public function __construct()
     {
-        session::init();
         parent::__construct();
         $this->categorymodel = $this->render->model('CategoryModel');
         $this->productmodel = $this->render->model('ProductModel');

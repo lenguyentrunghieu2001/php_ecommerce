@@ -92,6 +92,7 @@
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Category</th>
+                <th scope="col">Hot</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -106,7 +107,20 @@
                     <td><?= number_format($product['price']) . ' đ'  ?></td>
                     <td><?= $product['quantity'] ?></td>
                     <td><?= $product['category_name'] ?></td>
+                    <td>
+                        <?php
+                        if ($product['hot'] == 0) {
+                        ?>
+                            <a href="<?= route_product ?>/hot/<?= $product['id'] ?>" class="btn btn-danger">Not Hot</a>
 
+                        <?php
+                        } else {
+                        ?>
+                            <a href="<?= route_product ?>/hot/<?= $product['id'] ?>" class="btn btn-success">Hot</a>
+                        <?php
+                        }
+                        ?>
+                    </td>
                     <td>
                         <a href="<?= route_product ?>/editproduct/<?= $product['id'] ?>" class="btn btn-primary">Edit</a>
                         <a href="<?= route_product ?>/deleteproduct/<?= $product['id'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>

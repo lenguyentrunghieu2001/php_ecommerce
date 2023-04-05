@@ -40,16 +40,25 @@
                 <div class="panel  panel-warning panel-styling">
                     <div class="panel-heading">Tin tức cập nhật</div>
                     <div class="panel-body scrollable-panel">
-                        <div class="row">
-                            <div class="col-md-4 col-xs-4 col-sm-4">
-                                <img src="<?= asset ?>/image/iphone.png">
+                        <?php
+                        foreach ($data['post'] as $post) {
+
+                        ?>
+                            <div class="row">
+                                <div class="col-md-4 col-xs-4 col-sm-4">
+                                    <img src="<?= asset ?>/uploads/post/<?= $post['image'] ?>">
+                                </div>
+                                <div class="col-md-8 col-xs-8 col-sm-8">
+                                    <h4><?= $post['name'] ?></h4>
+                                    <a class="text-danger" href="<?= route_post_user ?>/detail/<?= $post['id'] ?>">Xem chi tiết</a>
+                                </div>
                             </div>
-                            <div class="col-md-8 col-xs-8 col-sm-8">
-                                <h4>Sự kiện iphone 11 sắp ra mắt</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                            </div>
-                        </div>
-                        <hr>
+                            <hr>
+
+                        <?php
+                        }
+
+                        ?>
 
 
                     </div>

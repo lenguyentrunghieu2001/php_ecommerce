@@ -18,7 +18,7 @@ class AccountModel extends Model
     {
         $sql = "SELECT * FROM $table WHERE $name LIKE '$username'";
 
-        return $this->db->find($sql);
+        return $this->db->findAccount($sql);
     }
 
     public function getAllAccounts($table)

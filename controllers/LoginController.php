@@ -53,6 +53,7 @@ class LoginController extends Controller
             session::set('username', $getLogin['username']);
             session::set('userid', $getLogin['id']);
             session::set('role_id', $getLogin['role_id']);
+
             if ($getLogin['role_id'] === 1) {
                 header('location:' . BASE_URL . 'admin');
             } else {

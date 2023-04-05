@@ -33,6 +33,6 @@ define('route_product_user', BASE_URL . 'product');
 
 define('route_post_user', BASE_URL . 'post');
 
-define('route_cart_user', BASE_URL . 'cart');
+define('route_cart', BASE_URL . 'cart');
 
 //---------------------end user--------------

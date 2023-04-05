@@ -23,6 +23,12 @@
                     <h1>Giỏ hàng của bạn</h1>
                 </div>
             </div>
+            <?php
+            if (isset($_SESSION['shopping_cart'])) {
+                $cart = $_SESSION["shopping_cart"];
+                print_r($cart);
+            }
+            ?>
             <div class="content_text">
                 <div class="container_table">
                     <table class="table table-hover table-condensed">

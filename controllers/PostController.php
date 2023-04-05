@@ -12,7 +12,6 @@ class PostController extends Controller
 
     public function __construct()
     {
-        session::init();
         parent::__construct();
         $this->categorymodel = $this->render->model('CategoryModel');
         $this->categorypostmodel = $this->render->model('CategoryPostModel');

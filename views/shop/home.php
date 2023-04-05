@@ -3,56 +3,66 @@
         <div class="module_pro_all">
             <div class="box-title">
                 <div class="title-bar">
-                    <h1>Sản phẩm HOT</h1>
-                    <a class="read_more" href="sanpham.php">
-                        Xem thêm
-                    </a>
+                    <h1>SẢN PHẨM HOT</h1>
+
                 </div>
             </div>
             <div class="pro_all_gird">
                 <div class="girds_all list_all_other_page ">
-                    <div class="grids">
-                        <div class="grids_in">
-                            <div class="content">
-                                <div class="img-right-pro">
+                    <?php
+                    if (Count($data['product']) < 1) {
+                    ?>
+                        <h1 class="text-center">Chưa có sản phẩm</h1>
+                        <?php
+                    } else {
 
-                                    <a href="sanpham.php">
-                                        <img class="lazy img-pro content-image" src="<?= asset ?>/image/iphone.png" data-original="image/iphone.png" alt="Máy in Canon MF229DW" />
-                                    </a>
+                        foreach ($data['product'] as $product) {
+                        ?>
+                            <form action="<?= route_cart ?>/addcart" method="POST">
+                                <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                <input type="hidden" name="product_name" value="<?= $product['name'] ?>">
+                                <input type="hidden" name="product_image" value="<?= $product['image'] ?>">
+                                <input type="hidden" name="product_price" value="<?= $product['price'] ?>">
+                                <input type="hidden" name="product_quantity" value="1">
+                                <div class="grids">
+                                    <div class="grids_in">
+                                        <div class="content">
+                                            <div class="img-right-pro">
 
-                                    <div class="content-overlay"></div>
-                                    <div class="content-details fadeIn-top">
-                                        <ul class="details-product-overlay">
-                                            <li>Màn hình : Super Amoled 4.5k</li>
-                                            <li>Độ phân giải : 2K+(1440x3040)</li>
-                                            <li>Ram : 8GB</li>
-                                            <li>CPU : Android 9.0</li>
-                                            <li>GPU : Mali-G76 MP12</li>
-                                            <li>SSD : 512MB</li>
+                                                <a href="sanpham.php">
+                                                    <img class="lazy img-pro content-image" src="<?= asset ?>/uploads/product/<?= $product['image'] ?>" />
+                                                </a>
 
-                                        </ul>
+                                                <div class="content-overlay"></div>
+                                                <div class="content-details fadeIn-top">
+                                                    <ul class="details-product-overlay">
+                                                        <li>Số lượng: <?= $product['quantity'] == 0 ? 'hết hàng' : $product['quantity'] ?></li>
 
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                            <div class="name-pro-right">
+                                                <a href="<?= route_product_user ?>/detail/<?= $product['id'] ?>">
+                                                    <h3><?= $product['name'] ?></h3>
+                                                </a>
+                                            </div>
+                                            <div class="add_card">
+                                                <input type="submit" style="box-shadow: none;" value="Đặt hàng" class="btn btn-warning">
+                                            </div>
+                                            <div class="price_old_new text-center">
+                                                <div class="price w-100">
+                                                    <span class="news_price"><?= number_format($product['price']) . 'vnd' ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="name-pro-right">
-                                    <a href="chitietsp.php">
-                                        <h3>Iphone X 64GB</h3>
-                                    </a>
-                                </div>
-                                <div class="add_card">
-                                    <a onclick="return giohang(579);">
-                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Đặt hàng
-                                    </a>
-                                </div>
-                                <div class="price_old_new">
-                                    <div class="price">
-                                        <span class="news_price">17.800.000đ </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            </form>
 
+                    <?php
+                        }
+                    } ?>
 
                     <div class="clear"></div>
                 </div>
@@ -60,99 +70,67 @@
             </div>
             <div class="clear"></div>
         </div>
+
         <div class="module_pro_all">
             <div class="box-title">
                 <div class="title-bar">
-                    <h1>Macbook mới</h1>
-                    <a class="read_more" href="sanpham.php">
+                    <h1>SẢN PHẨM MOI</h1>
+                    <a class="read_more" href="<?= route_product_user ?>">
                         Xem thêm
                     </a>
                 </div>
             </div>
             <div class="pro_all_gird">
                 <div class="girds_all list_all_other_page ">
-                    <div class="grids">
-                        <div class="grids_in">
-                            <div class="content">
-                                <div class="img-right-pro">
+                    <?php
+                    if (Count($data['product_new']) < 1) {
+                    ?>
+                        <h1 class="text-center">Chưa có sản phẩm</h1>
+                        <?php
+                    } else {
 
-                                    <a href="sanpham.php">
-                                        <img class="lazy img-pro content-image" src="<?= asset ?>/image/mac.jpg" data-original="image/mac.jpg" alt="Máy in Canon MF229DW" />
-                                    </a>
+                        foreach ($data['product_new'] as $product_new) {
+                        ?>
+                            <div class="grids">
+                                <div class="grids_in">
+                                    <div class="content">
+                                        <div class="img-right-pro">
 
-                                    <div class="content-overlay"></div>
-                                    <div class="content-details fadeIn-top">
-                                        <ul class="details-product-overlay">
-                                            <li>Màn hình : Super Amoled 4.5k</li>
-                                            <li>Độ phân giải : 2K+(1440x3040)</li>
-                                            <li>Ram : 8GB</li>
-                                            <li>CPU : Android 9.0</li>
-                                            <li>GPU : Mali-G76 MP12</li>
-                                            <li>SSD : 512MB</li>
+                                            <a href="sanpham.php">
+                                                <img class="lazy img-pro content-image" src="<?= asset ?>/uploads/product/<?= $product_new['image'] ?>" />
+                                            </a>
 
-                                        </ul>
+                                            <div class="content-overlay"></div>
+                                            <div class="content-details fadeIn-top">
+                                                <ul class="details-product-overlay">
+                                                    <li>Số lượng: <?= $product_new['quantity'] == 0 ? 'hết hàng' : $product_new['quantity'] ?></li>
 
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                        <div class="name-pro-right">
+                                            <a href="<?= route_product_user ?>/detail/<?= $product_new['id'] ?>">
+                                                <h3><?= $product_new['name'] ?></h3>
+                                            </a>
+                                        </div>
+                                        <div class="add_card">
+                                            <a onclick="return giohang(579);">
+                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Đặt hàng
+                                            </a>
+                                        </div>
+                                        <div class="price_old_new text-center">
+                                            <div class="price w-100">
+                                                <span class="news_price"><?= number_format($product_new['price']) . 'vnd' ?></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="name-pro-right">
-                                    <a href="chitietsp.php">
-                                        <h3>Iphone X 64GB</h3>
-                                    </a>
-                                </div>
-                                <div class="add_card">
-                                    <a onclick="return giohang(579);">
-                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Đặt hàng
-                                    </a>
-                                </div>
-                                <div class="price_old_new">
-                                    <div class="price">
-                                        <span class="news_price">17.800.000đ </span>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="module_pro_all">
-            <div class="box-title">
-                <div class="title-bar">
-                    <h1>Phụ kiện</h1>
-                    <a class="read_more" href="sanpham.php">
-                        Xem thêm
-                    </a>
-                </div>
-            </div>
-            <div class="pro_all_gird">
-                <div class="girds_all list_all_other_page ">
-                    <div class="grids">
-                        <div class="grids_in">
-                            <div class="img-right-pro">
-                                <a href="sanpham.php">
-                                    <img class="lazy img-pro" src="<?= asset ?>/image/phukien.jpg" data-original="image/phukien.jpg" alt="Máy in Canon MF229DW" />
-                                </a>
-                            </div>
-                            <div class="name-pro-right">
-                                <a href="chitietsp.php">
-                                    <h3>Bàn phím chơi gane 7 màu</h3>
-                                </a>
-                            </div>
-                            <div class="add_card">
-                                <a onclick="return giohang(579);">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Đặt hàng
-                                </a>
-                            </div>
-                            <div class="price_old_new">
-                                <div class="price">
-                                    <span class="news_price">800.000đ </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?php
+                        }
+                    } ?>
 
                     <div class="clear"></div>
                 </div>
@@ -160,7 +138,6 @@
             </div>
             <div class="clear"></div>
         </div>
-
 </section>
 <!--end:body-->
 <div class="clear"></div>
