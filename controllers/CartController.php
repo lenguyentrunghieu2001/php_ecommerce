@@ -1,11 +1,10 @@
 <?php
 
-class CategoryController extends Controller
+class CartController extends Controller
 {
     protected $data;
     protected $message;
-    protected $table = 'tbl_category_product';
-    protected $table_product = 'tbl_product';
+    protected $table = 'tbl_product';
     protected $categorymodel;
     protected $productmodel;
 
@@ -17,13 +16,11 @@ class CategoryController extends Controller
         $this->productmodel = $this->render->model('ProductModel');
     }
 
-    public function index($id)
+    public function index()
     {
-        $this->data['category_id'] = $this->categorymodel->categoryById($this->table, $id);
-        $this->data['product'] = $this->productmodel->findProduct($this->table_product, $id);
 
         $this->data['category'] = $this->menu($this->categorymodel);
         $this->render->view('shop/inc/menu', $this->data);
-        $this->render->layoutUser('shop/category', $this->data);
+        $this->render->layoutUser('shop/cart', $this->data);
     }
 }

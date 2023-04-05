@@ -44,7 +44,7 @@ class Database extends PDO
     {
         $statement = $this->prepare($sql);
         $statement->execute();
-        return $statement->fetch();
+        return $statement->fetchAll();
     }
 
 

@@ -67,22 +67,19 @@
                         <div id='cssmenu'>
                             <ul>
                                 <li class='active'><a href='<?= BASE_URL ?>'>Trang chủ</a></li>
+                                <li class=''><a href='<?= route_product_user ?>'>Sản phẩm</a></li>
 
-                                <li class=''>
 
-                                    <a href='sanpham.php'>Loại Tin Tức</a>
-
-                                    <ul>
-                                        <li><a href='sanpham.php'>Apple</a>
-                                        </li>
-                                        <li><a href='sanpham.php'>Samsung</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class=''><a href='chitiettin.php'>Tin tức</a></li>
-                                <li class=''><a href='chitiettin.php'>Giỏ hàng</a></li>
+                                <li class=''><a href='<?= route_post_user ?>'>Tin tức</a></li>
+                                <li class=''><a href='<?= route_cart_user ?>'>Giỏ hàng</a></li>
                                 <li class=''><a href='chitiettin.php'>Đơn hàng</a></li>
+                                <?php
+                                if (session::get('role_id') == 1) {
+                                ?>
+                                    <li class='active'><a href='<?= route_admin ?>'>Trang Admin</a></li>
+                                <?php
+                                }
+                                ?>
 
                             </ul>
                         </div>

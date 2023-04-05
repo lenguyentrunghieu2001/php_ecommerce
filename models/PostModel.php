@@ -12,6 +12,11 @@ class PostModel extends Model
         return $this->db->select($table);
     }
 
+    public function findPost($table, $id)
+    {
+        $sql = "SELECT * FROM $table WHERE category_post_id = $id";
+        return $this->db->selectRaw($sql);
+    }
 
     public function postById($table, $id)
     {

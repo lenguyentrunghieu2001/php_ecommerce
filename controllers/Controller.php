@@ -10,4 +10,9 @@ class Controller
         $this->render = new Render();
         $this->middleware = new Middleware();
     }
+
+    public function menu($categorymodel)
+    {
+        return $categorymodel->category('tbl_category_product');
+    }
 }

@@ -11,9 +11,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $categorymodel = $this->render->model('CategoryModel');
-        $data['category'] = $categorymodel->category('tbl_category_product');
-
+        $data['category'] = $this->menu($this->render->model('CategoryModel'));
         $this->render->view('shop/inc/menu', $data);
         $this->render->view('shop/inc/slider');
         $this->render->layoutUser('shop/home');

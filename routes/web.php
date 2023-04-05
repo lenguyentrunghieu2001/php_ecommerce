@@ -30,4 +30,9 @@ define('route_post', BASE_URL .  'admin/post');
 define('route_category_user', BASE_URL . 'category');
 
 define('route_product_user', BASE_URL . 'product');
+
+define('route_post_user', BASE_URL . 'post');
+
+define('route_cart_user', BASE_URL . 'cart');
+
 //---------------------end user--------------
