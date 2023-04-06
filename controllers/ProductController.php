@@ -33,4 +33,15 @@ class ProductController extends Controller
         $this->render->view('shop/inc/menu', $this->data);
         $this->render->layoutUser('shop/product/detail', $this->data);
     }
+
+    public function search()
+    {
+        if (!isset($_POST['keyword'])) {
+            header('location:' . BASE_URL);
+        }
+        $this->data['product'] = $this->productmodel->findName($this->table_product, $_POST['keyword']);
+        $this->data['category'] = $this->menu($this->categorymodel);
+        $this->render->view('shop/inc/menu', $this->data);
+        $this->render->layoutUser('shop/product/search', $this->data);
+    }
 }

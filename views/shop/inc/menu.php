@@ -5,8 +5,8 @@
                 <div class="bg_in">
 
                     <nav class="menu_top">
-                        <form class="search_form" method="get" action="">
-                            <input class="searchTerm" name="search" placeholder="Nhập từ cần tìm..." />
+                        <form class="search_form" method="post" action="<?= route_product_user ?>/search">
+                            <input class="searchTerm" name="keyword" placeholder="Nhập từ cần tìm..." />
                             <button class="searchButton" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
@@ -71,8 +71,8 @@
 
 
                                 <li class=''><a href='<?= route_post_user ?>'>Tin tức</a></li>
-                                <li class=''><a href='<?= route_cart ?>'>Giỏ hàng</a></li>
-                                <li class=''><a href='chitiettin.php'>Đơn hàng</a></li>
+                                <li class=''><a href='<?= route_cart ?>'>Giỏ hàng (<?= isset($_SESSION['shopping_cart']) ? Count($_SESSION['shopping_cart']) : 0 ?>)</a></li>
+                                <li class=''><a href=''>Liên hệ</a></li>
                                 <?php
                                 if (session::get('role_id') == 1) {
                                 ?>

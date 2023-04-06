@@ -19,7 +19,7 @@
             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                 <span itemprop="item">
                     <strong itemprop="name">
-                        Sản phẩm
+                        Tin tức
                     </strong>
                 </span>
                 <meta itemprop="position" content="2" />

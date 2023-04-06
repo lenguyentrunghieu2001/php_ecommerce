@@ -85,9 +85,16 @@ $product = $data['product'];
                                     <div class="clear"></div>
                                 </div>
                                 <div class="wp_a">
-                                    <a onclick="return giohang(579);" class="view_duan">
-                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="text-mobile-buy">Mua hàng</span>
-                                    </a>
+                                    <form action="<?= route_cart ?>/addcart" method="POST" name="submit_cart">
+                                        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                        <input type="hidden" name="product_name" value="<?= $product['name'] ?>">
+                                        <input type="hidden" name="product_image" value="<?= $product['image'] ?>">
+                                        <input type="hidden" name="product_price" value="<?= $product['price'] ?>">
+                                        <input type="hidden" name="product_quantity" value="1">
+                                        <a class="view_duan" onclick="document.forms['submit_cart'].submit();">
+                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="text-mobile-buy">Đặt hàng</span>
+                                        </a>
+                                    </form>
                                     <a href="tel:090 66 99 038" class="view_duan">
                                         <i class="fa fa-phone" aria-hidden="true"></i> <span class="text-mobile-buy">Gọi ngay</span>
                                     </a>

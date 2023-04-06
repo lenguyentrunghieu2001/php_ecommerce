@@ -2,18 +2,18 @@
     <h1 class="mt-4 text-center">Add Category_post</h1>
     <form action="" method="POST">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">description*</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="placeholer description ..." name="description" value="<?= isset($_POST['description']) ? $_POST['description'] : '' ?>">
+            <label for="exampleInputEmail1" class="form-label">name*</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="placeholer name ..." name="name" value="<?= isset($_POST['name']) ? $_POST['name'] : '' ?>">
             <?php
-            if (isset($message['description'])) {
+            if (isset($message['name'])) {
             ?>
-                <h6><?= $message['description'] ?></h6>
+                <h6><?= $message['name'] ?></h6>
             <?php }
             ?>
         </div>
         <div class="mb-3">
 
-            <label for="exampleInputEmail1" class="form-label">Name*</label>
+            <label for="exampleInputEmail1" class="form-label">Description*</label>
             <textarea class="form-control" id="description_category_post" aria-describedby="emailHelp" placeholder="placeholer description ..." name="description" cols="30" rows="10"><?= isset($_POST['description']) ? $_POST['description'] : '' ?></textarea>
             <?php
             if (isset($message['name'])) {

@@ -1,7 +1,7 @@
 <div class="container module_pro_all">
     <div class="box-title">
         <div class="title-bar">
-            <h1>Tất cả sản phẩm</h1>
+            <h1>Tìm kiếm sản phẩm</h1>
         </div>
     </div>
     <div class="pro_all_gird">
@@ -9,7 +9,7 @@
             <?php
             if (Count($data['product']) < 1) {
             ?>
-                <h1 class="text-center">Chưa có sản phẩm</h1>
+                <h1 class="text-center">Không có sản phẩm</h1>
                 <?php
             } else {
 

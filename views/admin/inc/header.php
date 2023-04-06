@@ -72,7 +72,7 @@
                         </li>
                         <hr class="w-100">
                         <li class="nav-item mb-3 mt-1">
-                            <a href="" class="nav-link align-middle px-0 text-white">
+                            <a href="<?= route_order ?>" class="nav-link align-middle px-0 text-white">
                                 <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Order management</span>
                             </a>
                         </li>

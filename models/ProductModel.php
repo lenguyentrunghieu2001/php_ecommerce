@@ -41,6 +41,12 @@ class ProductModel extends Model
         return $this->db->findOne($table, $id);
     }
 
+    public function findName($table, $name)
+    {
+        $sql = "SELECT * FROM $table WHERE name LIKE '%$name%'";
+        return $this->db->selectRaw($sql);
+    }
+
     public function insertProduct($table, $data = [])
     {
         $this->db->insert($table, $data);
